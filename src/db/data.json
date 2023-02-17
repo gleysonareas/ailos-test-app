@@ -1,0 +1,16 @@
+{
+  "personas": [
+    {
+      "id": 1,
+      "cpf": "14484065797",
+      "name": "Gleyson Areas da Silva",
+      "status": "regular"
+    },
+    {
+      "id": 2,
+      "cpf": "15978932778",
+      "name": "Sulamita Alves da Conceição Areas",
+      "status": "regular"
+    }
+  ]
+}
