@@ -1,4 +1,4 @@
-.Container
+.container
   display: flex
   flex-wrap: wrap
   justify-content: center
@@ -6,7 +6,7 @@
   min-height: 70px
   margin-bottom: 30px
 
-  .Step
+  .step
     display: flex
     flex-direction: column
     justify-content: center
@@ -21,7 +21,7 @@
     &:last-child .Circle span::after
       border: none
 
-    .Circle
+    .circle
       height: 100%
       align-items: center
       display: flex
@@ -53,7 +53,7 @@
           width: 61px
           border-top: 2px solid var(--mute-secondary-color)
 
-    .Title
+    .title
       font-family: 'Open Sans'
       font-style: normal
       font-weight: 400
@@ -63,10 +63,10 @@
       color: var(--mute-secondary-color)
       margin: 0
 
-    &.Active
+    &.active
       .Title
         color: var(--primary-color)
 
-      .Circle span
+      .circle span
         border-color: var(--primary-color)
         background-color: transparent

@@ -1,4 +1,4 @@
-<div class="Container">
+<div class="container">
   <app-stepper></app-stepper>
   <form>
     <h1 class="title">Informe o CPF do futuro cooperado(a)</h1>
@@ -13,58 +13,58 @@
       <form class="form" [formGroup]="form">
         <div class="form-control">
           <input [ngClass]="
-              (((this.isCpfNull() || this.isCpfInValid()) &&
+              (((isCpfNull() || isCpfInValid()) &&
                 !form.get('cpf')?.pristine) ||
                 error) &&
-              'Invalid'
+              'invalid'
             " name="cpf" formControlName="cpf" placeholder="000.000.000-00" maxlength="14" required
-            (focus)="this.error = undefined" (input)="this.error = undefined; maskCpf(form.get('cpf')?.value)" />
+            (focus)="error = undefined" (input)="error = undefined; maskCpf(form.get('cpf')?.value)" />
           <p *ngIf="
-              (this.isCpfNull() && !form.get('cpf')?.pristine) ||
+              (isCpfNull() && !form.get('cpf')?.pristine) ||
               error == 'required'
-            " class="Error">
+            " class="error">
             o campo CPF é obrigatório
           </p>
-          <p *ngIf="this.isCpfInValid() && !form.get('cpf')?.pristine" class="Error">
+          <p *ngIf="isCpfInValid() && !form.get('cpf')?.pristine" class="error">
             Informe um CPF válido
           </p>
-          <p *ngIf="error == 'notfound'" class="Error">
+          <p *ngIf="error == 'notfound'" class="error">
             Não existe usuário cadastrado com esse CPF!
           </p>
-          <p *ngIf="error == 'error'" class="Error">
+          <p *ngIf="error == 'error'" class="error">
             Houve algum erro ao consultar!
           </p>
         </div>
-        <button class="FormSubmit" (click)="onSubmit(form.get('cpf')?.value)">
-          <ion-icon *ngIf="this.loading" class="Loading" name="refresh" title="Carregando..."></ion-icon>
-          <span *ngIf="!this.loading">Consultar por CPF</span>
+        <button class="form-submit" (click)="onSubmit(form.get('cpf')?.value)">
+          <ion-icon *ngIf="loading" class="loading" name="refresh" title="Carregando..."></ion-icon>
+          <span *ngIf="!loading">Consultar por CPF</span>
         </button>
       </form>
     </div>
   </form>
-  <div *ngIf="person" class="Data">
-    <div class="DataHeader">
+  <div *ngIf="person" class="data">
+    <div class="data-header">
       <h2 class="title">Situação cadastral do CPF</h2>
       <h3 class="subtitle">Consulta na receita federal</h3>
     </div>
     <div class="data-person">
-      <ion-icon name="person" class="Person"></ion-icon>
-      <div class="Content">
+      <ion-icon name="person" class="person"></ion-icon>
+      <div class="content">
         <h6 class="label">Nome</h6>
-        <p class="Text">{{ person.name }}</p>
+        <p class="text">{{ person.name }}</p>
       </div>
     </div>
     <div class="data-person">
-      <ion-icon *ngIf="person.status == 'irregular'" name="close" class="Unchecked"></ion-icon>
-      <ion-icon *ngIf="person.status == 'regular'" name="checkmark-circle-outline" class="Checked"></ion-icon>
-      <div class="Content">
+      <ion-icon *ngIf="person.status == 'irregular'" name="close" class="unchecked"></ion-icon>
+      <ion-icon *ngIf="person.status == 'regular'" name="checkmark-circle-outline" class="checked"></ion-icon>
+      <div class="content">
         <h6 class="label">Situação do CPF</h6>
-        <p class="Text">{{ person.status }}</p>
+        <p class="text">{{ person.status }}</p>
       </div>
     </div>
   </div>
 </div>
-<div class="Footer">
-  <button class="Button BtPrimary">Iníciar nova admissão</button>
-  <button class="Button">Dicas para abertura de conta</button>
+<div class="footer">
+  <button class="button btn-primary">Iníciar nova admissão</button>
+  <button class="button">Dicas para abertura de conta</button>
 </div>

@@ -1,14 +1,14 @@
-<div class="Container">
+<div class="container">
   <div
-    class="Step"
-    [ngClass]="step.active ? 'Active' : ''"
+    class="step"
+    [ngClass]="step.active ? 'active' : ''"
     *ngFor="let step of steps"
   >
-    <div class="Circle">
+    <div class="circle">
       <span></span>
     </div>
     <div>
-      <p class="Title">{{ step.name }}</p>
+      <p class="title">{{ step.name }}</p>
     </div>
   </div>
 </div>
